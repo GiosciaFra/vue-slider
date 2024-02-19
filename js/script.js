@@ -18,7 +18,8 @@ createApp( {
 
     data () {
 
-        return{
+        return {
+            activeSlideIndex: 0,
 
             slides: [
                 
@@ -46,5 +47,7 @@ createApp( {
 
             ]
         }
-    }
+    },
+
+
 }).mount('#app')
