@@ -15,7 +15,10 @@
     <div id="app">
 
         <div class="container">
-            <div class="slider-wrapper" tabindex="0">
+            <div class="slider-wrapper" 
+                 tabindex="0"
+                 @mouseenter = "pause" 
+                 @mouseleave = "autoPlay">
 
                 <div v-for = "(currentSlide, index) in slides" 
                      class="item" 

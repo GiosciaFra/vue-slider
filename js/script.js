@@ -71,10 +71,14 @@ createApp( {
         },
         
         autoPlay() {
-            setInterval(() => {
+          this.intervalAutoPlay =  setInterval(() => {
                 this.nextSlide();
             }, 3000);
         },
+
+        pause(){
+            clearInterval(this.intervalAutoPlay);
+        }
     },
         mounted() {
             this.autoPlay();
