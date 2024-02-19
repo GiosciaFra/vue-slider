@@ -16,7 +16,7 @@ const { createApp } = Vue;
 
 createApp( {
 
-    data () {
+    data() {
 
         return {
             activeSlideIndex: 0,
@@ -58,15 +58,26 @@ createApp( {
                 this.activeSlideIndex = this.slides.length - 1;
             }
         },
+
         nextSlide() {
          this.activeSlideIndex++;
             if (this.activeSlideIndex > this.slides.length - 1) {
                 this.activeSlideIndex = 0;
             }
         },
+
         clickThumb(index) {
             this.activeSlideIndex = index;
+        },
+        
+        autoPlay() {
+            setInterval(() => {
+                this.nextSlide();
+            }, 3000);
+        },
+    },
+        mounted() {
+            this.autoPlay();
         }
-    }
 
 }).mount('#app')
